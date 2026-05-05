@@ -1,3 +1,5 @@
-´´´dataset = pd.read_csv("Crude_Oil.csv", sep=",")
-dataset.head()
-´´´
+
+```python
+def saudacao():
+    print("Olá, mundo!")
+```

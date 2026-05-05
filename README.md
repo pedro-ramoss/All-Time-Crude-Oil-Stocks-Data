@@ -77,3 +77,138 @@ dataset.head()
    
 <img width="579" height="149" alt="3" src="https://github.com/user-attachments/assets/e75f95c1-9a64-43c4-8115-4d56dadb2933" />   
 
+---
+
+### 🧹 Verificação de Dados Nulos
+Antes de seguir com qualquer análise, achei importante validar se existiam valores nulos no dataset.
+
+```python
+dataset.isnull().sum()
+```
+
+<img width="129" height="115" alt="4" src="https://github.com/user-attachments/assets/b39ea070-f136-4803-bc6f-d41cdf13a628" />
+
+---
+
+###📈 Análise de Tendência dos Preços   
+
+Depois de entender a estrutura dos dados, comecei analisando o comportamento dos preços ao longo do tempo.   
+
+Utilizei gráficos de linha para visualizar a evolução das principais variáveis:   
+
+Preço de abertura   
+Preço máximo   
+Preço mínimo   
+Preço de fechamento   
+
+<br> 
+
+```
+srn.lineplot(data=dataset, x='Data', y='Preco_abertura')
+```
+
+<br>
+
+<img width="482" height="345" alt="5" src="https://github.com/user-attachments/assets/e8238c76-f847-4e66-b8c6-d3c45644ebd6" />
+
+<br>
+
+```
+srn.lineplot(data=dataset, x='Data', y='Preco_maximo')
+```
+<br>
+
+<img width="473" height="326" alt="6" src="https://github.com/user-attachments/assets/be6defef-52fe-43aa-a6d9-4c9006f40f41" />
+
+<br>
+
+```
+srn.lineplot(data=dataset, x='Data', y='Preco_baixo')
+```
+<br>
+
+<img width="493" height="339" alt="7" src="https://github.com/user-attachments/assets/bff41790-bfcf-492f-a14b-b82d4dca933c" />
+
+<br>
+
+```
+srn.lineplot(data=dataset, x='Data', y='Preco_fechamento')
+```
+
+<br>
+
+<img width="485" height="347" alt="8" src="https://github.com/user-attachments/assets/4cd1ed6c-ef75-4890-bcfb-a4a7beb41328" />
+
+<br>
+
+Ao observar esses gráficos, já é possível perceber que o mercado de petróleo apresenta alta volatilidade ao longo dos anos, com períodos de forte crescimento seguidos por quedas relevantes.   
+
+---
+
+🚨 Identificação de Valores Extremos (Outliers)
+
+Durante a análise, quis entender melhor momentos em que o preço do petróleo atingiu valores muito altos.
+
+```
+dataset[dataset["Preco_fechamento"] >= 125]
+```
+
+<br>
+
+<img width="581" height="394" alt="9" src="https://github.com/user-attachments/assets/56d2a66c-cbdf-4c4e-b049-f886aeb3080a" />
+
+<br>
+
+Os dados mostram que esses picos aconteceram principalmente por volta de 2008, um período conhecido por forte instabilidade econômica global.   
+
+---
+
+### ⚠️ Evento Anômalo (Preço Negativo)
+
+Um ponto que chamou bastante atenção foi a existência de um valor negativo no preço do petróleo:
+
+<br>
+
+```
+dataset[dataset["Preco_fechamento"] < 0]
+```
+<br>
+
+<img width="598" height="69" alt="10" src="https://github.com/user-attachments/assets/5e021eef-64dd-4ad3-b083-251416b50ecc" />
+
+<br>
+
+Esse registro corresponde ao dia 20 de abril de 2020, quando o preço chegou a valores negativos.   
+
+Esse evento está diretamente ligado ao impacto da pandemia de COVID-19, onde houve uma queda brusca na demanda e excesso de oferta, levando o mercado a uma situação atípica.   
+
+---
+
+### 📊 Distribuição dos Dados
+
+Por fim, analisei a distribuição dos preços mínimos para entender melhor o comportamento geral dos dados.   
+
+<br>
+
+```
+srn.displot(data=dataset, x="Preco_baixo", kde=True)
+```
+
+<br>
+
+<img width="421" height="372" alt="11" src="https://github.com/user-attachments/assets/5c4f88cc-d200-4c36-a31d-7946b7f6df5e" />
+
+---
+
+### 📌 Conclusão
+
+Esse projeto foi fundamental para consolidar conceitos básicos de análise de dados, principalmente na etapa de:   
+
+Importação e leitura de dados   
+Entendimento da estrutura do dataset   
+Limpeza e padronização   
+Visualização de dados   
+Identificação de padrões e eventos relevantes   
+
+Além disso, foi possível observar na prática como fatores externos, como crises econômicas e eventos globais, impactam diretamente o comportamento do mercado.   
+

@@ -1,6 +1,8 @@
 
-All time crude oil strocks data e um csv com dados sobre petroleo e seu valor
-O arquivo comeca em agosto de 2000 e vai ate os dias atuais 
+All time crude oil strocks data e um csv com dados sobre petroleo e seu valor  
+O arquivo comeca em agosto de 2000 e vai ate os dias atuais   
+
+---
 
 <div align="left">
   <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=for-the-badge" height="40" alt="python logo"  />

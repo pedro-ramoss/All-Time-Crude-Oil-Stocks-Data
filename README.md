@@ -1,4 +1,4 @@
-# 🛢️ Análise de Dados: All Time Crude Oil Stocks
+# 🛢️ Análise de Dados: All Time Crude Oil Stocks 
 
 Este projeto foca na exploração e visualização de dados históricos sobre estoques e preços de petróleo bruto, com registros que acompanham o mercado desde **agosto de 2000** até os dias atuais.
 
@@ -33,7 +33,7 @@ Diante disso, optei por focar na base de qualquer projeto de Ciência de Dados: 
 
 ---
 
-### 🔍 Primeira Etapa: Visualização dos Dados
+## 🔍 Primeira Etapa: Visualização dos Dados
 Utilizei a biblioteca **Pandas** para carregar o arquivo e o método `.head()` para validar se os dados estavam coerentes e bem estruturados.
 
 ```python
@@ -79,7 +79,7 @@ dataset.head()
 
 ---
 
-### 🧹 Verificação de Dados Nulos
+## 🧹 Verificação de Dados Nulos
 Antes de seguir com qualquer análise, achei importante validar se existiam valores nulos no dataset.
 
 ```python
@@ -90,7 +90,7 @@ dataset.isnull().sum()
 
 ---
 
-###📈 Análise de Tendência dos Preços   
+## 📈 Análise de Tendência dos Preços   
 
 Depois de entender a estrutura dos dados, comecei analisando o comportamento dos preços ao longo do tempo.   
 
@@ -145,7 +145,7 @@ Ao observar esses gráficos, já é possível perceber que o mercado de petróle
 
 ---
 
-🚨 Identificação de Valores Extremos (Outliers)
+## 🚨 Identificação de Valores Extremos (Outliers)
 
 Durante a análise, quis entender melhor momentos em que o preço do petróleo atingiu valores muito altos.
 
@@ -163,7 +163,7 @@ Os dados mostram que esses picos aconteceram principalmente por volta de 2008, u
 
 ---
 
-### ⚠️ Evento Anômalo (Preço Negativo)
+## ⚠️ Evento Anômalo (Preço Negativo)
 
 Um ponto que chamou bastante atenção foi a existência de um valor negativo no preço do petróleo:
 
@@ -184,7 +184,7 @@ Esse evento está diretamente ligado ao impacto da pandemia de COVID-19, onde ho
 
 ---
 
-### 📊 Distribuição dos Dados
+## 📊 Distribuição dos Dados
 
 Por fim, analisei a distribuição dos preços mínimos para entender melhor o comportamento geral dos dados.   
 
@@ -200,7 +200,7 @@ srn.displot(data=dataset, x="Preco_baixo", kde=True)
 
 ---
 
-### 📌 Conclusão
+## 📌 Conclusão
 
 Esse projeto foi fundamental para consolidar conceitos básicos de análise de dados, principalmente na etapa de:   
 
